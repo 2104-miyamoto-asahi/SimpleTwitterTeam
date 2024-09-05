@@ -1,0 +1,63 @@
+POST http://localhost:8080/users
+content-type: application/json
+Accept:application/json
+//一行開ける
+
+{
+    "name": "小菅"
+}
+
+###
+PUT http://localhost:8080/users/4
+content-type: application/json
+Accept:application/json
+
+{
+    "name": "小菅さん"
+}
+
+###
+DELETE http://localhost:8080/users/4
+content-type: application/json
+Accept:application/json
+
+###
+// 正常系
+GET http://localhost:8080/users/2
+content-type: application/json
+Accept:application/json
+
+###
+// 異常系
+GET http://localhost:8080/users/4
+content-type: application/json
+Accept:application/json
+
+###
+POST http://localhost:8080/users
+content-type: application/json
+Accept:application/json
+
+{
+    "name": ""
+}
+
+### ここから【応用】の動作確認
+GET http://localhost:8080/users
+content-type: application/json
+Accept:application/json
+
+###
+GET http://localhost:8080/users/3
+content-type: application/json
+Accept:application/json
+
+###
+GET http://localhost:8080/users?name=二
+content-type: application/json
+Accept:application/json
+
+###
+GET http://localhost:8080/users?name=鱧
+content-type: application/json
+Accept:application/json
